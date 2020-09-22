@@ -23,20 +23,28 @@ Compléter les quelques exercices suivants en modifiant le code de [exercice.py]
 Vous devez compléter les fonctions suivantes du fichier [exercice.py](exercice.py).
 
 ```python
-def convert_to_absolute() -> float:
-    return 0.0
+def convert_to_absolute(number: float) -> float:
+    return 0
+
 
 def use_prefixes() -> List[str]:
-    prefixes, suffixes = 'JKLMNOP', 'ack'
+    prefixes, suffixe = 'JKLMNOPQ', 'ack'
 
     return [""]
+
 
 def prime_integer_summation() -> int:
     return 0
 
+
 def factorial(number: int) -> int:
     return 0
 
+
 def use_continue() -> None:
     pass
+
+
+def verify_ages(groups: List[List[int]]) -> List[bool]:
+    return []
 ```
