@@ -10,14 +10,26 @@ import exercice
 
 
 class TestExercice(unittest.TestCase):
-    def test_prefixes(self):
-        output = exercice.use_prefixes()
-        answer = ["Jack", "Kack", "Lack", "Mack", "Nack", "Oack", "Pack"]
+    def test_absolute(self):
+        values = [5, -5]
+        output = [exercice.convert_to_absolute(v) for v in values]
+        answer = [5, 5]
+
 
         self.assertListEqual(
             output,
             answer,
-            'Mauvaise identification de la parité de la longueur de la chaine'
+            'Mauvaise réponse'
+        )
+
+    def test_prefixes(self):
+        output = exercice.use_prefixes()
+        answer = ["Jack", "Kack", "Lack", "Mack", "Nack", "Oack", "Pack", "Qack"]
+
+        self.assertListEqual(
+            output,
+            answer,
+            'Mauvaise réponse'
         )
 
     def test_summation(self):
@@ -35,7 +47,7 @@ class TestExercice(unittest.TestCase):
         self.assertEqual(
             output,
             answer,
-            'Retrait du mauvais caractère'
+            'Mauvaise réponse'
         )
 
     def test_factorial(self):
@@ -47,7 +59,22 @@ class TestExercice(unittest.TestCase):
         self.assertListEqual(
             output,
             answer,
-            'Erreur dans le remplacement de caractère'
+            'Mauvaise réponse'
+        )
+
+    def test_verify_ages(self):
+        groups = [[15, 28, 65, 70, 72], [18, 24, 22, 50, 70], [25, 2],
+                  [20, 22, 23, 24, 18, 75, 51, 49, 100, 18, 20, 20], [70, 50, 26, 28], [75, 50, 18, 25],
+                  [13, 25, 80, 15], [20, 30, 40, 50, 60], [75, 50, 100, 28]]
+
+        answer = [False, True, False, False, True, True, True, True, False]
+
+        output = exercice.verify_ages(groups)
+
+        self.assertListEqual(
+            output,
+            answer,
+            'Mauvaise réponse'
         )
 
 
